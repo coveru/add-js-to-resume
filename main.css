@@ -1,0 +1,65 @@
+body{ background-color: #efefef;color: black; margin: 0;}
+a{ color: inherit;text-decoration: none;}
+*{ margin: 0;padding: 0;}
+h1,h2,h3,h4,h5,h6{ font-weight: normal;}
+
+.clearfix::after{ content: '';display: block;clear: both;}
+.topNavBar{ padding-top: 22px;padding-bottom: 22px;padding-left: 0px; padding-right: 0px;position: fixed; top:0;left: 0;width: 100%;}
+.topNavBar .topNavBar-inner{padding: 0 16px;}
+.topNavBar  nav > ul > li{ float: left; margin-left: 17px; margin-right: 17px;}
+.topNavBar  nav > ul > li> a{ font-size: 12px;color: #c1c3c6;text-decoration: none;font-weight: bold;border-bottom: 3px solid transparent;padding-top: 5px; padding-bottom: 5px;display: block;}
+.topNavBar  nav{padding-top: 7px; padding-bottom: 3px;}
+.topNavBar  nav > ul{list-style: none;margin: 0;padding: 0;}
+.topNavBar  nav > ul > li> a:hover{ border-bottom: 3px solid #e8676b;}
+.topNavBar .logo{ font-family: "Arial Black"; font-size: 24px;padding-top: 1px;padding-bottom: 6px;}
+.topNavBar .logo .rs{ margin-right: 4px;color: #e8676b;}
+.topNavBar .logo .card{ color: #9a9da2;}
+.topNavBar > nav > ul > li> a:hover{ border-bottom: 3px solid #e8676b;}
+
+.banner{ height: 515px;background-image: url(./img/123.jpg);   background-position: center center;background-size: cover;}
+.banner .mask { height: 515px;background-color: rgba(0, 0, 0, 0.4);}
+
+.userCard { max-width: 940px;margin-left: auto;margin-right: auto;background-color: #ffffff;box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.5);}
+.userCard .welcome { color: white;background-color: #e8676b;display: inline-block;padding: 4px 16px;line-height: 22px;position: relative;margin-bottom: 27px;}
+.userCard .welcome .triangle{ border: 10px solid transparent;width: 0px;border-left-color:#e8676b; border-top-width:0px;display: block;   position:absolute;top: 100%;left: 4px;}
+.userCard .pictureAndText { padding: 50px;}
+.userCard .picture { float:left;}
+.userCard .text { float: left;margin-left: 65px;width: 475px;}
+hr{ height: 0;border: none;border: 1px solid #dedede;}
+.userCard.welcome h1{ margin: 9px;}
+.userCard .text hr{ margin: 22px 0px;}
+.userCard dl dt{ float:left;width: 30%;padding: 4px 0;font-weight: bold;}
+.userCard dl dd{ float:left; width: 70%;   padding: 5px 0;color: #9a9da2;}
+.userCard>footer.media { background-color: #e8676b;text-align: center;}
+.userCard>footer.media> a{ display: inline-block;width: 40px;padding: 5px 0px;line-height: 30px;border-radius: 50%;margin: 16px 16px;}
+.userCard>footer.media> a:hover{ background: #cf5d5f;}
+.userCard svg{ width: 30px;height: 30px;fill: white;    vertical-align: top;}
+
+body>main{ margin-top: -350px;}
+body> main .downloadResume-wrapper{ text-align: center;}
+body> main .downloadResume{ font-size: 14px;line-height: 16px;padding: 21px 55px; display: inline-block; border: 1px solid #cdcfc1;background-color: #efefef;border-radius: 4px;color: #3d4451;font-weight: bold;margin: 32px 0;         }
+body> main .downloadResume:hover{ box-shadow: 0px 4px 13px 0px rgba(0,0,0,0.2);transition: box-shadow 0.2s;}
+
+.selfIntroduction{ max-width: 940px;margin-left: auto;margin-right: auto;text-align: center; font-family: 楷体;font-size: 20px;   line-height: 1.8;}
+
+section.skills,section.portfolio{ max-width: 940px;margin-left: auto;margin-right: auto;  margin-top: 60px;}
+section.skills> h2,section.portfolio> h2{ text-align: center;color: #3d4451;font-size:34px;font-weight:600;line-height: 1.2;}
+section.skills> h3{ font-size: 14px;line-height: 1.1;padding-right: 40px;}
+section.skills ol{ box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.5);background-color: white; list-style: none;padding: 42px 50px 6px;margin-top: 30px;}
+section.skills> ol> li{ float: left;width: 48%;box-sizing: border-box;}
+section.skills> ol> li:nth-child(even){ float:right;}
+section.skills .progressBar{ height: 5px;background-color: #fae0e0;border-radius: 2px;margin: 4px 0 40px 0;}
+section.skills .progress{ background: #e8676b;height: 100%;border-radius: 2px;}
+section.portfolio{ text-align: center;margin-bottom: 60px;}
+section.portfolio> nav{ text-align: center;display: inline-block;vertical-align: top;margin-top: 32px;    }
+section.portfolio> nav > ol{ list-style: none;margin: 0 auto;display: inline-block;vertical-align: top;}
+section.portfolio> nav > ol> li{ float:left;margin-left: 40px;cursor: pointer;}
+section.portfolio> nav > ol> li:nth-child(1){ margin-left: 0;}
+section.portfolio> nav .bar{ margin-top: 5px;height: 5px;background: white;margin-bottom: 100px;border-radius: 2px;}
+section.portfolio > nav .bar-inner{ height: 100%;background: #e8676b;border-radius: 2px;transition: all 0.2s;}
+section.portfolio > nav .bar.state-1 .bar-inner{ margin-left: 0;width:40px;    }
+section.portfolio > nav .bar.state-2 .bar-inner{ margin-left: 65px;width:50px; }
+section.portfolio > nav .bar.state-3 .bar-inner{ margin-left: 140px;width:94px; }
+section.portfolio .works{ position: relative;vertical-align: top;margin-top: -40px;}
+section.portfolio .works .big{ position: absolute;   }
+section.portfolio .works .small{ position: absolute; }
