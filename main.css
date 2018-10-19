@@ -2,19 +2,32 @@ body{ background-color: #efefef;color: black; margin: 0;}
 a{ color: inherit;text-decoration: none;}
 *{ margin: 0;padding: 0;}
 h1,h2,h3,h4,h5,h6{ font-weight: normal;}
+ul, ol { list-style: none; }
+hr{ height: 0;border: none;border: 1px solid #dedede;}
 
 .clearfix::after{ content: '';display: block;clear: both;}
-.topNavBar{ padding-top: 22px;padding-bottom: 22px;padding-left: 0px; padding-right: 0px;position: fixed; top:0;left: 0;width: 100%;}
+.topNavBar{ padding-top: 22px;padding-bottom: 22px;padding-left: 0px; padding-right: 0px;position: fixed; top:0;left: 0;width: 100%; 
+    transition:all 0.5s linear;color: #c1c3c6}
+.topNavBar.sticky{
+    background: white; padding: 10px 0;z-index: 1; box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+color: #3d4451}
 .topNavBar .topNavBar-inner{padding: 0 16px;}
-.topNavBar  nav > ul > li{ float: left; margin-left: 17px; margin-right: 17px;}
-.topNavBar  nav > ul > li> a{ font-size: 12px;color: #c1c3c6;text-decoration: none;font-weight: bold;border-bottom: 3px solid transparent;padding-top: 5px; padding-bottom: 5px;display: block;}
+.topNavBar  nav > ul > li{ float: left; margin-left: 17px; margin-right: 17px; position: relative;}
+.topNavBar  nav > ul > li> a{ font-size: 12px;color: inherit;text-decoration: none;font-weight: bold;border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;padding-top: 5px; padding-bottom: 5px;display: block;
+    position: relative;
+}
 .topNavBar  nav{padding-top: 7px; padding-bottom: 3px;}
 .topNavBar  nav > ul{list-style: none;margin: 0;padding: 0;}
-.topNavBar  nav > ul > li> a:hover{ border-bottom: 3px solid #e8676b;}
+.topNavBar  nav > ul > li.active > a::after{ content: '';display: block;position: absolute;top: 100%;left: 0;width: 100%;height: 3px;background: #e8676b;animation: menuslide 0.3s; }
+ @keyframes menuslide{ 0%{width:0} 100%{width:100%} }
+.topNavBar .submenu{display: none; position: absolute; right: 0; top: 100%;background: white;color:#3d4451; box-shadow: 0 0 5px rgba(0, 0, 0, 0.5)}
+.topNavBar li.active> .submenu{display: block; animation: submenuSlide 0.3s;}
+@keyframes submenuSlide { 0%{transform: translateX(-40%);Opacity: 0} 100%{transform: translateX(0);Opacity: 1}}
+.topNavBar .submenu > li{white-space:nowrap; padding: 5px 10px;}
 .topNavBar .logo{ font-family: "Arial Black"; font-size: 24px;padding-top: 1px;padding-bottom: 6px;}
 .topNavBar .logo .rs{ margin-right: 4px;color: #e8676b;}
 .topNavBar .logo .card{ color: #9a9da2;}
-.topNavBar > nav > ul > li> a:hover{ border-bottom: 3px solid #e8676b;}
 
 .banner{ height: 515px;background-image: url(./img/123.jpg);   background-position: center center;background-size: cover;}
 .banner .mask { height: 515px;background-color: rgba(0, 0, 0, 0.4);}
@@ -25,7 +38,7 @@ h1,h2,h3,h4,h5,h6{ font-weight: normal;}
 .userCard .pictureAndText { padding: 50px;}
 .userCard .picture { float:left;}
 .userCard .text { float: left;margin-left: 65px;width: 475px;}
-hr{ height: 0;border: none;border: 1px solid #dedede;}
+
 .userCard.welcome h1{ margin: 9px;}
 .userCard .text hr{ margin: 22px 0px;}
 .userCard dl dt{ float:left;width: 30%;padding: 4px 0;font-weight: bold;}
