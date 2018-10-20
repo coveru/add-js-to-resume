@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="./main.css">
   <link rel="stylesheet" href="./loading.css">
   <script src="//at.alicdn.com/t/font_859799_uvewtnf6tl.js"></script>
+  
   <style type="text/css">
    .icon {
        width: 1em; height: 1em;
@@ -198,6 +199,7 @@
         </div>
      
     </section>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
     <script>
       setTimeout(function(){
         siteWelcome.classList.remove('active')
@@ -219,18 +221,39 @@
          x.currentTarget.classList.remove('active')
       }
     }
+
     let aTags = document.querySelectorAll('nav.menu > ul > li > a')
+     function animate(time) {
+     requestAnimationFrame(animate);
+     TWEEN.update(time);
+     }
+     requestAnimationFrame(animate);
+
+    
     for(let i=0; i<aTags.length;i++){
       aTags[i].onclick = function(x){
         x.preventDefault()  //调用函数传入的参数的方法阻止默认动作（阻止点击跳转到锚点）
         let a = x.currentTarget //获取用户点击的a标签
         let href = a.getAttribute('href')   //获取a标签的href#siteAbout
         let element = document.querySelector(href)       //根据href得到点击的元素
-        let top = element.offsetTop             //得到点击元素到页面顶部的距离top的值
-        window.scrollTo(0, top - 80)    //让窗口滑动到想要的指定位置（通过top的值定位）
+        let top = element.offsetTop                 //得到点击元素到页面顶部的距离top的值
+        let targetTop = top - 80         
+        let currentTop = window.scrollY
+        let s = targetTop - currentTop
+        var coords = { y:currentTop}; 
+        var t = Math.abs((s/100)*200)
+        if (t>700){
+          t = 700
+        }
+        var tween = new TWEEN.Tween(coords)  
+        .to({ y: targetTop }, t) 
+        .easing(TWEEN.Easing.Quadratic.InOut) 
+        .onUpdate(function() { 
+         window.scrollTo(0, coords.y)
+        })
+        .start();
       }
     }
-
     </script>          
 </body>
 </html>
