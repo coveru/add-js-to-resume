@@ -4,7 +4,12 @@ a{ color: inherit;text-decoration: none;}
 h1,h2,h3,h4,h5,h6{ font-weight: normal;}
 ul, ol { list-style: none; }
 hr{ height: 0;border: none;border: 1px solid #dedede;}
-
+.icon {
+  width: 1em; height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
 .clearfix::after{ content: '';display: block;clear: both;}
 .topNavBar{ padding-top: 22px;padding-bottom: 22px;padding-left: 0px; padding-right: 0px;position: fixed; top:0;left: 0;width: 100%; 
     transition:all 0.5s linear;color: #c1c3c6}
@@ -75,19 +80,18 @@ section.skills.offset .progress{
   transform: translateX(-100%);
 }
 section.portfolio{ text-align: center;margin-bottom: 60px;}
-section.portfolio> nav{ text-align: center;display: inline-block;vertical-align: top;margin-top: 32px;    }
-section.portfolio> nav > ol{ list-style: none;margin: 0 auto;display: inline-block;vertical-align: top;}
-section.portfolio> nav > ol> li{ float:left;margin-left: 40px;cursor: pointer;}
-section.portfolio> nav > ol> li:nth-child(1){ margin-left: 0;}
-section.portfolio> nav .bar{ margin-top: 5px;height: 5px;background: white;margin-bottom: 100px;border-radius: 2px;}
-section.portfolio > nav .bar-inner{ height: 100%;background: #e8676b;border-radius: 2px;transition: all 0.2s;}
-section.portfolio > nav .bar.state-1 .bar-inner{ margin-left: 0;width:40px;    }
-section.portfolio > nav .bar.state-2 .bar-inner{ margin-left: 65px;width:50px; }
-section.portfolio > nav .bar.state-3 .bar-inner{ margin-left: 140px;width:94px; }
+section.portfolio  h2{margin-bottom: 45px;}
 section.portfolio .works{ position: relative;vertical-align: top;margin-top: -40px;}
 section.portfolio .works .big{ position: absolute;   }
 section.portfolio .works .small{ position: absolute; }
-[data-x].offset{
+section.portfolio .swiper-container{
+  width: 800px;
+  height: 600px;
+}
+section.portfolio .swiper-slide{
+
+}
+[data-x].offset{ 
    transform: translateY(100px);
 }
 [data-x]{
